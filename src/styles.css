@@ -1,0 +1,87 @@
+/* Global, minimal, functional styling. Design tokens as CSS custom properties
+   so individual components stay theme-agnostic and could fold into a design
+   system later. */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f7f8fa;
+  --color-border: #d6dae1;
+  --color-text: #1b1f24;
+  --color-text-muted: #5a6472;
+  --color-accent: #1d4ed8;
+  --color-focus: #1d4ed8;
+  --color-error: #b3261e;
+  --color-row-hover: #eef2ff;
+
+  --status-available: #137333;
+  --status-transit: #9a6700;
+  --status-delivered: #5a6472;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font);
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-size: 14px;
+}
+
+/* A single, consistent, highly-visible focus indicator across the whole app.
+   Meets WCAG 2.4.7 (focus visible) and 1.4.11 (non-text contrast). */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Visually hidden but available to screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -48px;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  z-index: 10;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
