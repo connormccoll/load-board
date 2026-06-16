@@ -1,0 +1,4 @@
+# Copy to terraform.tfvars and adjust as needed. All values are optional.
+# project_name = "freight-load-board"
+# aws_region   = "us-east-1"
+# bucket_name  = ""   # leave empty to auto-generate a unique name
