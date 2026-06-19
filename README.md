@@ -19,7 +19,7 @@ at runtime to exercise virtual scrolling. The multiplier lives in
 set it to `1` to use the seed data unchanged.
 
 **Built with:** Angular 22 — standalone components, signals, and **zoneless**
-change detection (no zone.js). TypeScript 6 strict mode. Angular CDK virtual
+change detection. TypeScript 6 strict mode. Angular CDK virtual
 scroll for the grid body. Unit tests run on **Vitest** via the
 `@angular/build:unit-test` builder. No UI component libraries.
 
